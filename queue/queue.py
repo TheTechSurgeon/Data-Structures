@@ -19,10 +19,13 @@ class Queue:
         # self.storage = ?
     
     def __len__(self):
-        pass
+        return self.size
 
     def enqueue(self, value):
-        pass
+        self.storage.add_to_head(value)
+        self.size = self.storage.length
 
     def dequeue(self):
-        pass
+        removed = self.storage.remove_tail()
+        self.size = self.storage.length
+        return removed
